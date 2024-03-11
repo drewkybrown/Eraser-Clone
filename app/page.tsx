@@ -1,25 +1,21 @@
 "use client"
-import React from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import Header from "./_components/Header"
-import Hero from "./_components/Hero"
-import {LoginLink, useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
-import { useEffect } from "react"
-
-
-
+import Image from "next/image";
+import Header from "./_components/Header";
+import Hero from "./_components/Hero";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import { useEffect } from "react";
 
 export default function Home() {
-  const { user } = useKindeBrowserClient();
 
-  useEffect(() => {
+  const {user}=useKindeBrowserClient();
+
+  useEffect(()=>{
     console.log("--",user)
-  }, [user])
+  },[user])
   return (
     <div>
-      <Header />
-      <Hero />
+      <Header/>
+      <Hero/>
     </div>
-  )
+  );
 }
